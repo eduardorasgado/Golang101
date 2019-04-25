@@ -23,7 +23,12 @@ func main() {
 	y := 55
 	z := 75
 	// otras variables
-	var abgSolution float64
+	var (
+		abgSolution  float64
+		dividedValue float32
+		valueby2     int
+		valueBy3     int
+	)
 
 	/**
 	Comentario de bloque o de varias lineas:
@@ -34,7 +39,16 @@ func main() {
 	showSomething()
 	showVectorLength(x, y, z)
 	abgSolution = getSimpleSolution(ALPHA, GAMMA, BETA)
-	fmt.Printf("Solution is: %f", abgSolution)
+	fmt.Printf("Solution is: %f\n", abgSolution)
+
+	dividedValue, valueby2, valueBy3 = returnCouple(x)
+
+	fmt.Printf("values, divided: %f, double: %d, triple: %d\n",
+		dividedValue, valueby2, valueBy3)
+
+	fmt.Printf("value in main: %d\n", valueBy3)
+	addDouble(&valueBy3)
+	fmt.Printf("value in main: %d\n", valueBy3)
 }
 
 /**
