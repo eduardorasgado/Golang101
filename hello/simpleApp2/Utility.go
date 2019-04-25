@@ -55,10 +55,32 @@ func exampleArray() {
 }
 
 func exampleArray2() {
-	array1 := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	var array1 = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 	for i := 0; i < len(array1); i++ {
 		fmt.Printf("%d ", array1[i])
 	}
 	fmt.Println()
+	showArray(array1)
+	arrayByReference(&array1)
+	showArray(array1)
+}
+
+/**
+Funcion que toma de parametro un arreglo de elementos
+*/
+func showArray(arr [10]int) {
+	for i := 0; i < len(arr); i++ {
+		fmt.Printf("%d ", arr[i])
+	}
+	fmt.Println()
+}
+
+/**
+Funcion que manipula un arreglo que es pasado por referencia
+*/
+func arrayByReference(arr *[10]int) {
+	for i := 0; i < len(*arr); i++ {
+		arr[i] = arr[i] * 2
+	}
 }
