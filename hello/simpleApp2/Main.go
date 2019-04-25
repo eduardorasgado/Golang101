@@ -51,6 +51,7 @@ func main() {
 	fmt.Printf("value in main: %d\n", valueBy3)
 
 	workingWithArrays()
+	workingWithSlices()
 }
 
 /**

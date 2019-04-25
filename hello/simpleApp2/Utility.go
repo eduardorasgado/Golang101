@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /**
 Devolvemos un conjunto de valores de distintos tipos en una funcion
@@ -82,5 +84,32 @@ Funcion que manipula un arreglo que es pasado por referencia
 func arrayByReference(arr *[10]int) {
 	for i := 0; i < len(*arr); i++ {
 		arr[i] = arr[i] * 2
+	}
+}
+
+/**
+trabajando con slices
+*/
+func workingWithSlices() {
+	sliceExample()
+}
+
+func sliceExample() {
+	// Los slices son contenedores dinamicos
+	var sliceContainer []int
+	sliceContainer = append(sliceContainer,
+		10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+	// formas simples de mostrar un slice
+	fmt.Println(sliceContainer)
+	fmt.Println(sliceContainer[0])
+
+	showSlice(&sliceContainer)
+}
+func showSlice(sliceContainer *[]int) {
+	fmt.Println(*sliceContainer)
+	// iterando en un slice
+	for e := range *sliceContainer {
+		fmt.Printf("%d ", e)
 	}
 }
