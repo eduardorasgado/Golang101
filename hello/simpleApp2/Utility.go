@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 Devolvemos un conjunto de valores de distintos tipos en una funcion
 */
@@ -25,4 +27,38 @@ func addDouble(x *int) {
 	// dentro de esta referencia usando
 	//doubleX := (*x) * (*x)
 	*x += *x
+}
+
+/**
+Funcion para llamar funciones
+*/
+func workingWithArrays() {
+	// example 1
+	exampleArray()
+	exampleArray2()
+}
+
+/**
+Funcion para trabajar con arreglos exclusivamente y con el ciclo for
+*/
+func exampleArray() {
+	var array1 [4]int
+	array1[0] = 1
+	array1[1] = 2
+	array1[2] = 3
+	array1[3] = 4
+
+	for i := 0; i < len(array1); i++ {
+		fmt.Printf("%d ", array1[i])
+	}
+	fmt.Println()
+}
+
+func exampleArray2() {
+	array1 := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	for i := 0; i < len(array1); i++ {
+		fmt.Printf("%d ", array1[i])
+	}
+	fmt.Println()
 }

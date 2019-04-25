@@ -49,6 +49,8 @@ func main() {
 	fmt.Printf("value in main: %d\n", valueBy3)
 	addDouble(&valueBy3)
 	fmt.Printf("value in main: %d\n", valueBy3)
+
+	workingWithArrays()
 }
 
 /**
